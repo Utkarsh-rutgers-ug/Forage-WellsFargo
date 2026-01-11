@@ -1,0 +1,45 @@
+erDiagram
+  ADVISOR ||--o{ CLIENT : manages
+  CLIENT ||--|| PORTFOLIO : owns
+  PORTFOLIO ||--o{ PORTFOLIO_HOLDING : contains
+  SECURITY_MASTER ||--o{ PORTFOLIO_HOLDING : referenced_by
+
+  ADVISOR {
+    BIGINT advisor_id PK
+    VARCHAR first_name
+    VARCHAR last_name
+    VARCHAR email
+    TIMESTAMP created_at
+  }
+
+  CLIENT {
+    BIGINT client_id PK
+    BIGINT advisor_id FK
+    VARCHAR first_name
+    VARCHAR last_name
+    VARCHAR email
+    VARCHAR status
+    TIMESTAMP created_at
+  }
+
+  PORTFOLIO {
+    BIGINT portfolio_id PK
+    BIGINT client_id FK UNIQUE
+    VARCHAR name
+    TIMESTAMP created_at
+  }
+
+  SECURITY_MASTER {
+    BIGINT security_id PK
+    VARCHAR name
+    VARCHAR category
+  }
+
+  PORTFOLIO_HOLDING {
+    BIGINT holding_id PK
+    BIGINT portfolio_id FK
+    BIGINT security_id FK
+    DATE purchase_date
+    NUMERIC purchase_price
+    NUMERIC quantity
+  }
