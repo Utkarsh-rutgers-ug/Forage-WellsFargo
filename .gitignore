@@ -1,38 +1,33 @@
-# OS / editor junk
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-
-# Logs
-*.log
-
-# Environment files
-.env
-.env.*
-
-# Node / React (if added later)
-node_modules/
-dist/
-build/
-.next/
-.cache/
-
-# Java / Spring (if added later)
+HELP.md
 target/
-*.class
-*.jar
-*.war
-*.ear
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
-.settings/
+.settings
+.springBeans
+.sts4-cache
 
-# IDEs
-.idea/
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
-.vscode/
+*.ipr
 
-# Python (if you add scripts)
-__pycache__/
-*.pyc
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
